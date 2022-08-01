@@ -1,0 +1,17 @@
+{
+  "name": "nyancat-greetings",
+  "version": "1.0.0",
+  "description": "Nyan greetings",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nyan",
+    "cat",
+    "ignas",
+    "laude"
+  ],
+  "author": "Ignas Laude",
+  "license": "MIT"
+}
