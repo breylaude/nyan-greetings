@@ -1,0 +1,127 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>There's a message for you...</title>
+<meta name="description" content="Spread your message with Nyan cat" />
+
+<link rel="author" href="https://laude.ml/"/>
+<link rel="publisher" href="https://laude.ml" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:title" content="There's a message for you.." />
+
+<link rel="apple-touch-icon" href="images/icon-57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="images/icon-72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="images/icon-114.png" />
+<link rel="shortcut icon" href="../lib/ico/favicon.ico">
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="topblock">
+            <div id="custom">
+               <form method="post" action="" enctype="application/x-www-form-urlencoded" id="searchForm">
+                  <input type="text" name="s" />
+                  <input id="update" type="submit" value="update" />
+              </form>
+        	</div>
+            <div id="linguetta">Type your message</div>
+        </div>
+        
+        <div id="rightblock">
+        	<div id="sharecontent">
+        		<div class="right">
+                <a id="mailto" href="#" target="_blank"><img class="right" src="images/8bitmail.gif" /></a>
+				<a id="sharetw" href="#" target="_blank"><img class="right" src="images/8bittwit.gif" /></a>
+                <a id="sharefb" href="#" target="_blank"><img class="right" src="images/8bitfb.gif" /></a>
+				</div>
+                <input type="text" id="tiny">
+            </div>
+            <div id="linguettashare">Share!</div>
+
+		</div>
+         
+        <div id="playa" loop><img src="images/playa.png" /></div>
+        <img id="sun" src="images/sun.gif" />
+        <audio id="bgSound" preload>
+            <source src="mp3/nyan.ogg" type="audio/ogg" />
+            <source src="mp3/nyan.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+        <div id="footer">
+<div class="people">
+<div class="people-inside"></div>
+</div>
+</div>
+<!--         <div id="footer">
+            <img id="ombrellone1" src="images/ombrellone.gif" />
+            <img id="ombrellone2" src="images/ombrellone22.png" />
+            <img id="ombrellone3" src="images/ombrellone3.gif" />
+        </div> -->
+        
+        <div id="animation">
+            <img id="nuvola1" src="images/cloud1.gif" />
+            <img id="nuvola2" src="images/cloud2.gif" />
+            <div id="wrapaereo">
+            <div id="aereo">
+                <img class="left" src="images/aereo2.gif" />
+	                <div id="result"><p>There's a message for you!</p></div>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+
+<div id="timer">people reached: <span id="gente"></span></div>
+
+<script>
+
+    $(document).ready(function() {
+
+        var lafrase = 'There is a message for you!';
+
+        var url = location.href;
+        var url_parts = url.split('?');
+        var main_url = url_parts[0];
+        var lafrasebuona = lafrase.replace(/ /g,"_");
+        makeTinyUrl(url+'index.php?frase='+ lafrasebuona);
+
+        $("#searchForm").submit(function(event) {
+            event.preventDefault();
+            var $form = $( this );
+            lafrase = $form.find( 'input[name="s"]' ).val();
+            $( "#result" ).find('p').empty().text(lafrase);
+            $("#custom").slideToggle();
+            lafrasebuona = lafrase.replace(/ /g,"_");
+            makeTinyUrl(url+'?frase='+ lafrasebuona);
+            contatore = 0;
+        });
+        
+        if(lafrase!=""){
+            $( "#result" ).find('p').empty().text(lafrase);
+            document.title = lafrase;
+        }
+    });  
+</script>
+
+            <script type="text/javascript">
+  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  // ga('create', 'UA-3220555-1', 'laude.ml');
+  // ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
