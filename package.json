@@ -2,7 +2,7 @@
   "name": "nyancat-greetings",
   "version": "1.0.0",
   "description": "Nyan greetings",
-  "main": "index.html",
+  "main": "all.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
